@@ -1,0 +1,21 @@
+{
+  "networks": [
+    {
+      "name": "hack_scout",
+      "front_man": "hack_scout_gm",
+      "hocon": "/agents/hack_scout.network.json"
+    }
+  ],
+  "llm_router": {
+    "base_url": "/mock/llm",
+    "mock": true,
+    "byok_router": "https://api.openai.com/v1"
+  },
+  "peer_policy": {
+    "allow": []
+  },
+  "site": {
+    "name": "Hack Scout by dualwarez",
+    "description": "Find, evaluate and win hackathons - an open agentic web demo."
+  }
+}

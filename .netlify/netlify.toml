@@ -1,0 +1,46 @@
+functionsDirectory = "C:\\Users\\it\\.zcode\\workspace\\draft-29c17c1c-5c87-4a6b-8cce-c1cb673d19e0\\agentic-site\\netlify\\functions"
+functionsDirectoryOrigin = "default"
+headersOrigin = "config"
+redirectsOrigin = "config"
+plugins = []
+
+[build]
+publish = "C:\\Users\\it\\.zcode\\workspace\\draft-29c17c1c-5c87-4a6b-8cce-c1cb673d19e0\\agentic-site"
+publishOrigin = "config"
+functions = "C:\\Users\\it\\.zcode\\workspace\\draft-29c17c1c-5c87-4a6b-8cce-c1cb673d19e0\\agentic-site\\netlify\\functions"
+
+[build.environment]
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
+
+[functions]
+
+[functions."*"]
+
+[[headers]]
+for = "/*"
+
+[headers.values]
+Access-Control-Allow-Origin = "*"
+
+[[redirects]]
+from = "/mock/llm"
+to = "/.netlify/functions/mock-llm"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]

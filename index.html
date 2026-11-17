@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hack Scout — Open Agentic Web demo by dualwarez</title>
+  <style>
+    :root { color-scheme: dark; }
+    body { margin:0; min-height:100vh; background:#0d1117; color:#e6edf3; font-family:Inter,system-ui,sans-serif; }
+    .wrap { max-width: 780px; margin: 0 auto; padding: 32px 20px 60px; }
+    .logo { font-size: 26px; font-weight: 800; }
+    .logo span { color: #f6406a; }
+    p.dim { color: #8b949e; line-height: 1.55; }
+    .card { background:#161b22; border:1px solid #2d333b; border-radius:14px; padding:20px; margin:18px 0; }
+    a { color:#f6406a; }
+    .badge { display:inline-block; background:#1f6feb33; color:#58a6ff; border-radius:999px; padding:3px 10px; font-size:12px; margin-right:6px; }
+    code { background:#21262d; padding:2px 6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="logo">🎯 Hack<span>Scout</span></div>
+    <p class="dim">An <b>open agentic web</b> demo site: publishes a portable multi-agent network (Neuro SAN HOCON/JSON), runs it <b>entirely in your browser</b> via the nsDeploy reference runtime, and supports <b>Bring-Your-Own-Key</b> inference. Built for the Open Agentic Web Challenge.</p>
+    <div class="card">
+      <span class="badge">agent-manifest.json</span><span class="badge">hack_scout.network.json</span><span class="badge">links.json</span><span class="badge">CORS open</span>
+      <p class="dim" style="margin:12px 0 0">Published artifacts: a 4-agent network — <b>hack_scout_gm</b> (front), <b>hackathon_finder</b>, <b>bounty_evaluator</b>, <b>submission_coach</b>. Peers can fetch and run this network in their own browser after consent.</p>
+    </div>
+    <div id="app"></div>
+    <div class="card">
+      <p class="dim"><b>Peer linking:</b> point your runtime at <code>/agents/agent-manifest.json</code> or the network URL <code>/agents/hack_scout</code> to load this network as a peer. Default inference runs on this site's published mock router; supply your own OpenAI-compatible key for real responses (stored only in your browser).</p>
+    </div>
+  </div>
+  <script type="module" src="/runtime/index.js"></script>
+  <script type="module">
+    import { boot } from "/runtime/index.js";
+    boot("#app", {}).catch(e => {
+      const r = document.getElementById("app");
+      if (r) r.innerHTML = '<div class="card"><p style="color:#f6406a">Runtime error: ' + String(e.message||e) + '</p></div>';
+    });
+  </script>
+</body>
+</html>
